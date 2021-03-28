@@ -1,12 +1,15 @@
 
 
-import * as THREE from '../node_modules/three/build/three.module.js';
-import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js'
+//import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import * as dat from 'dat.gui'
 
-
-const clock = new THREE.Clock();
+console.log(THREE);
+const clock = new THREE.Clock() //2
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
     75,
@@ -33,8 +36,8 @@ window.addEventListener("resize", () => {
 // const light = new THREE.PointLight( 0xff0000, 1, 500 );
 // light.position.set( 10, 0, 25 );
 
-// const controls = new THREE.OrbitControls(camera, renderer.domElement)
-// controls.update();
+const controls = new OrbitControls(camera, renderer.domElement)
+controls.update();
 
 const light = new THREE.AmbientLight(0x404040, 5); // soft white light
 scene.add(light);
